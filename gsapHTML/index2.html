@@ -8,10 +8,28 @@
   </head>
   <style></style>
   <body class="min-h-screen w-full bg-black text-white">
-     <div>
-
-
-     </div>
+    <div>
+      <div
+        class="div1 flex justify-center items-center h-screen w-full bg-gray-950"
+      >
+        <div class="w-20 h-20 bg-red-800"></div>
+      </div>
+      <div
+        class="div2 flex justify-center items-center h-screen w-full bg-gray-900"
+      >
+        <div class="w-20 h-20 bg-red-800"></div>
+      </div>
+      <div
+        class="div3 flex justify-center items-center h-screen w-full bg-gray-950"
+      >
+        <div class="w-20 h-20 bg-red-800"></div>
+      </div>
+      <div
+        class="div4 flex justify-center items-center h-screen w-full bg-gray-900"
+      >
+        <div class="w-20 h-20 bg-red-800"></div>
+      </div>
+    </div>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
@@ -19,8 +37,78 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+      integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script>
-       
+      // gsap.to(".div1 div", { x: 100, duration: 2 });
+      // gsap.to(".div2 div", { x: 100, duration: 2, scrollTrigger: ".div2 div" });
+      // problem is this it run animation when user is not watching the this part of screen
+
+      // gsap.to(".div1 div", { rotate: 180, scale: 1.9, duration: 2 });
+      // gsap.to(".div2 div", {
+      //   rotate: 180,
+      //   scale: 1.9,
+      //   duration: 2,
+      //   scrollTrigger: {
+      //     trigger: ".div2 div",
+      //     scroller: "body",
+      //     markers: true,
+      //     start: "top 60%",
+      //   },
+      // });
+
+      gsap.to(".div1 div", {
+        rotate: 180,
+        scale: 1.9,
+        duration: 2,
+        scrollTrigger: {
+          trigger: ".div1 div",
+          scroller: "body",
+          markers: true,
+          start: "top 60%",
+          scrub: true,
+        },
+      });
+      gsap.to(".div2 div", {
+        rotate: 180,
+        scale: 1.9,
+        scrollTrigger: {
+          trigger: ".div2 div",
+          scroller: "body",
+          markers: true,
+          start: "top 60%",
+          scrub: 3,
+          // scrub is just like yoyo but it works with scroll
+          // scrub have true or number value 1-5
+        },
+      });
+
+      gsap.to(".div3 div", {
+        rotate: 180,
+        scale: 0.2,
+        scrollTrigger: {
+          trigger: ".div3 div",
+          scroller: "body",
+          markers: true,
+          start: "top 60%",
+          scrub: 1,
+        },
+      });
+      gsap.to(".div4 div", {
+        rotate: 180,
+        scale: 0.2,
+        scrollTrigger: {
+          trigger: ".div4 div",
+          scroller: "body",
+          markers: true,
+          start: "top 60%",
+          scrub: 1,
+        },
+      });
     </script>
   </body>
 </html>
