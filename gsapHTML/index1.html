@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <style></style>
+  <body class="min-h-screen w-full bg-black text-white">
+    <br />
+    <div class="firstdiv w-22 h-22 bg-red-800"></div>
+    <br />
+    <div class="flex flex-col gap-4">
+      <h1 class="staggerTest text-4xl font-bold">Hello Wrold</h1>
+      <h1 class="staggerTest text-4xl font-bold">Hello Wrold</h1>
+      <h1 class="staggerTest text-4xl font-bold">Hello Wrold</h1>
+      <h1 class="staggerTest text-4xl font-bold">Hello Wrold</h1>
+      <h1 class="staggerTest text-4xl font-bold">Hello Wrold</h1>
+    </div>
+
+    <br />
+
+    <div class="flex flex-col gap-4">
+      <div class="tl1 w-22 h-22 bg-red-800"></div>
+      <div class="tl2 w-22 h-22 bg-green-800"></div>
+      <div class="tl3 w-22 h-22 bg-blue-800"></div>
+      <div class="tl4 w-22 h-22 bg-pink-800"></div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      gsap.fromTo(".firstdiv", { x: 150 }, { x: 300, duration: 4, skewX: 201 });
+
+      gsap.from(".staggerTest", {
+        duration: 6,
+        y: 30,
+        opacity: 0,
+        stagger: -0.2,
+      });
+
+      let tl = gsap.timeline();
+      tl.from(".tl2", { x: -100, duration: 2, opacity: 0 })
+        .from(".tl3", { y: 100, duration: 2, opacity: 0 })
+        .from(".tl4", { x: 100, duration: 2, opacity: 0 });
+
+      tl.from(".tl1", { x: -100, duration: 2, opacity: 0 });
+    </script>
+  </body>
+</html>
