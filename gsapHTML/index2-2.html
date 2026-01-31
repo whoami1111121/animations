@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <style></style>
-  <body class="min-h-screen w-full bg-black text-white">
+  <body class="min-h-screen w-full bg-black text-white overflow-x-hidden">
     <div>
       <div
         class="div1 flex justify-center items-center h-screen w-full bg-gray-950"
@@ -15,17 +15,14 @@
         <div class="w-20 h-20 bg-red-800"></div>
       </div>
       <div
-        class="div2 flex justify-center items-center h-screen w-full bg-gray-900"
+        class="div2 flex justify-start items-center h-screen w-full bg-gray-900"
       >
-        <div class="w-20 h-20 bg-red-800"></div>
+        <h1 class="text-[200px] font-bold whitespace-nowrap translateX(-100%)">
+          Who Am I - Who Am I
+        </h1>
       </div>
       <div
         class="div3 flex justify-center items-center h-screen w-full bg-gray-950"
-      >
-        <div class="w-20 h-20 bg-red-800"></div>
-      </div>
-      <div
-        class="div4 flex justify-center items-center h-screen w-full bg-gray-900"
       >
         <div class="w-20 h-20 bg-red-800"></div>
       </div>
@@ -44,7 +41,31 @@
       referrerpolicy="no-referrer"
     ></script>
     <script>
-      
+      gsap.to(".div1 div", {
+        rotate: 180,
+        scale: 1.9,
+        duration: 2,
+        scrollTrigger: {
+          trigger: ".div1 div",
+          scroller: "body",
+          markers: true,
+          start: "top 60%",
+          scrub: true,
+        },
+      });
+      gsap.to(".div2 h1", {
+        transform: "translateX(-150%)",
+        scrollTrigger: {
+          trigger: ".div2",
+          scroller: "body",
+          markers: true,
+          start: "top 0%",
+          end: "top -100%",
+          scrub: 3,
+          pin: true,
+          // if we use pin it will always keep accoding parrent height.
+        },
+      });
     </script>
   </body>
 </html>
