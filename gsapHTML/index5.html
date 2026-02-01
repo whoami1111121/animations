@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <style>
+    .bg {
+      background-image: url("https://plus.unsplash.com/premium_photo-1769380789163-cf2f0a79b20a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+      background-size: cover;
+      height: 100%;
+    }
+  </style>
+  <body
+    class="h-screen w-full bg-black text-white overflowX-hidden"
+    style="overflow-x: hidden"
+  >
+    <div class="bg relative">
+      <div class="flex justify-between px-18 py-8">
+        <h1 class="text-4xl">Logo</h1>
+        <span class="text-2xl" id="ham">=</span>
+      </div>
+      <div
+        class="h-screen w-[30%] z-4 bg-[#ffff003d] pl-12 pr-4 absolute top-0 right-0"
+        id="bg"
+      >
+        <div class="text-right pt-6 pl-8" id="close">
+          <span class="text-2xl">X</span>
+        </div>
+        <div class="flex gap-8 flex-col" id="menu">
+          <h1 class="text-8xl">Home</h1>
+          <h1 class="text-8xl">About</h1>
+          <h1 class="text-8xl">Home2</h1>
+          <h1 class="text-8xl">Home3</h1>
+          <h1 class="text-8xl">Home4</h1>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+      integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      let ham = document.getElementById("ham");
+      let close = document.getElementById("close");
+      let tl = gsap.timeline();
+      tl.to("#ham", {
+        duration: 0.3,
+        opacity: 0,
+      });
+      tl.from("#bg", {
+        right: -500,
+        duration: 1,
+      });
+      tl.from("#menu h1", {
+        x: 350,
+        duration: 1,
+        opacity: 0,
+        stagger: 0.2,
+      });
+      tl.from("#close", {
+        duration: 1,
+        opacity: 0,
+      });
+
+      tl.pause();
+      ham.addEventListener("click", () => {
+        tl.play();
+      });
+      close.addEventListener("click", () => {
+        tl.reverse();
+      });
+    </script>
+  </body>
+</html>
