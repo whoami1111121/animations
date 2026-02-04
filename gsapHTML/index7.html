@@ -6,7 +6,27 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <style></style>
+  <style>
+    #move {
+      padding: 20px;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+    .marque {
+      flex-shrink: 0;
+      display: flex;
+      gap: 3vw;
+      padding: 0 1.5vw;
+      align-items: center;
+      font-size: 24px;
+      flex-wrap: nowrap;
+      transform: translateX(-100%);
+    }
+    .marque h1 {
+      white-space: inherit;
+      flex-wrap: nowrap;
+    }
+  </style>
   <body class="h-screen w-full bg-black text-white" style="overflow-x: hidden">
     <div
       class="w-full h-screen bg-red-900"
@@ -16,6 +36,57 @@
       class="w-full h-screen bg-red-900"
       style="width: 100%; height: 100vh; background-color: rgb(157, 202, 32)"
     ></div>
+    <div id="move">
+      <div class="marque">
+        <h1>Who Am I</h1>
+        <img src="img.png" alt="sdfaf" class="" />
+      </div>
+      <div class="marque">
+        <h1>Who Am I</h1>
+        <img src="img.png" alt="sdfaf" class="" />
+      </div>
+      <div class="marque">
+        <h1>Who Am I</h1>
+        <img src="img.png" alt="sdfaf" class="" />
+      </div>
+      <div class="marque">
+        <h1>Who Am I</h1>
+        <img src="img.png" alt="sdfaf" class="" />
+      </div>
+      <div class="marque">
+        <h1>Who Am I</h1>
+        <img src="img.png" alt="sdfaf" class="" />
+      </div>
+      <div class="marque">
+        <h1>Who Am I</h1>
+        <img src="img.png" alt="sdfaf" class="" />
+      </div>
+      <div class="marque">
+        <h1>Who Am I</h1>
+        <img src="img.png" alt="sdfaf" class="" />
+      </div>
+      <div class="marque">
+        <h1>Who Am I</h1>
+        <img src="img.png" alt="sdfaf" class="" />
+      </div>
+      <div class="marque">
+        <h1>Who Am I</h1>
+        <img src="img.png" alt="sdfaf" class="" />
+      </div>
+      <div class="marque">
+        <h1>Who Am I</h1>
+        <img src="img.png" alt="sdfaf" class="" />
+      </div>
+      <div class="marque">
+        <h1>Who Am I</h1>
+        <img src="img.png" alt="sdfaf" class="" />
+      </div>
+      <div class="marque">
+        <h1>Who Am I</h1>
+        <img src="img.png" alt="sdfaf" class="" />
+      </div>
+    </div>
+
     <div
       class="w-full h-screen bg-red-900"
       style="width: 100%; height: 100vh; background-color: blue"
@@ -34,7 +105,29 @@
     ></script>
     <script>
       window.addEventListener("wheel", function (dets) {
-        console.log(dets.deltaY);
+        if (dets.deltaY > 0) {
+          gsap.to(".marque", {
+            transform: "translateX(-200%)",
+            repeat: -1,
+            duration: 2,
+            ease: "none",
+          });
+
+          gsap.to(".marque img", {
+            rotate: 180,
+          });
+        } else {
+          gsap.to(".marque", {
+            transform: "translateX(-00%)",
+            repeat: -1,
+            duration: 2,
+            ease: "none",
+          });
+
+          gsap.to(".marque img", {
+            rotate: 0,
+          });
+        }
       });
     </script>
   </body>
