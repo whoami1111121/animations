@@ -6,13 +6,28 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <style></style>
+  <style>
+    h1 span {
+      display: inline-block;
+      min-width: 20px;
+    }
+  </style>
   <body class="h-screen w-full bg-black text-white" style="overflow-x: hidden">
     <div
-      class="flex justify-between item-center w-full h-screen"
+      class="flex flex-col gap-2 justify-between item-center w-full h-screen"
       style="display: flex; justify-content: space-around; align-items: center"
     >
-      <h1 id="ani" class="text-8xl font-bold inline-block">Who Am I</h1>
+      <div class="flex flex-col gap-8">
+        <div>
+          <input type="text" id="aniText" />
+          <button onclick="startAni()">Submit</button>
+        </div>
+        <div>
+          <h1 id="ani" class="text-8xl font-bold inline-block">
+            Put Your Text
+          </h1>
+        </div>
+      </div>
     </div>
 
     <script
@@ -28,17 +43,35 @@
       referrerpolicy="no-referrer"
     ></script>
     <script>
+      function startAni() {
+        console.log("ani");
+
+        BrackText();
+      }
       function BrackText() {
-        let ani = document.getElementById("ani");
-        let aniText = ani.textContent;
+        let aniText = document.getElementById("aniText").value;
+        console.log(aniText);
+
+        // let aniText = ani.textContent;
         let splittedAniText = aniText.split("");
         let splitAni = "";
         splittedAniText.forEach((item, index) => {
-          splitAni += `<span class='${Math.ceil(ani.length / 2) > index ? "ok" : "fail"}'>${item} </span>`;
+          splitAni += `<span class='${Math.ceil(aniText.length / 2) > index ? "left" : "right"}'>${item}</span>`;
         });
         ani.innerHTML = splitAni;
+        gsap.from(".right", {
+          y: 70,
+          opacity: 0,
+          duration: 2,
+          stagger: -0.2,
+        });
+        gsap.from(".left", {
+          y: 70,
+          opacity: 0,
+          duration: 2,
+          stagger: 0.2,
+        });
       }
-      BrackText();
     </script>
   </body>
 </html>
