@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: 0;
+      outline: none;
+    }
+    body {
+      overflow-x: hidden;
+    }
+    header {
+      background-color: black;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 50px;
+    }
+    .logo {
+      padding: 26px 0 0;
+    }
+    .menu ul li {
+      list-style: none;
+      display: inline-block;
+      margin: 26px 25px;
+    }
+    .menu ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      position: relative;
+    }
+    .menu ul li a:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -10%;
+      width: 0%;
+      height: 2px;
+      background-color: white;
+      transition: all ease 0.5s;
+    }
+    .menu ul li a:hover:before {
+      width: 120%;
+    }
+
+    .content {
+      display: flex;
+      position: relative;
+      margin-top: -80px;
+    }
+    .content img {
+      width: 100%;
+    }
+    .common {
+      width: 50%;
+      position: relative;
+    }
+    .img {
+      position: relative;
+      overflow: hidden;
+    }
+    .img-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      z-index: 9;
+    }
+    .text {
+      position: absolute;
+      bottom: 80px;
+      left: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+    }
+    .text h1 {
+      font-size: 82px;
+      font-weight: 300;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+    .text h5 {
+      font-size: 28px;
+      letter-spacing: 20px;
+      text-transform: uppercase;
+    }
+    .btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .btn a {
+      display: inline-block;
+      border: 1px solid #fff;
+      padding: 25px 60px;
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+      opacity: 0;
+      transition: all ease 0.5s;
+    }
+    .btn a:hover {
+      background-color: #fff;
+      color: black;
+    }
+    .common:hover .btn a {
+      opacity: 1;
+    }
+    body {
+      background-color: gray;
+    }
+  </style>
+  <body class="h-screen w-full bg-black text-white" style="overflow-x: hidden">
+    <div class="wrapper">
+      <header>
+        <div class="logo">
+          <img src="logo.webp" width="100px" alt="" />
+        </div>
+        <div class="menu">
+          <ul>
+            <li><a href="#"> All Clothings</a></li>
+            <li><a href="#"> New In</a></li>
+            <li><a href="#"> Clothings</a></li>
+            <li><a href="#"> Bradings</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="men common">
+          <div class="img">
+            <img
+              src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2F0fGVufDB8fDB8fHww"
+              alt=""
+            />
+            <div class="img-overlay"></div>
+          </div>
+          <div class="text">
+            <h1>Cat</h1>
+            <h5>Fashion</h5>
+          </div>
+          <div class="btn">
+            <a href="#">Shop Now</a>
+          </div>
+        </div>
+        <div class="women common">
+          <div class="img">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZG9nfGVufDB8fDB8fHww"
+              alt=""
+            />
+            <div class="img-overlay"></div>
+          </div>
+          <div class="text">
+            <h1>Dog</h1>
+            <h5>Fashion</h5>
+          </div>
+          <div class="btn">
+            <a href="#">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+      integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      const tl_img = gsap
+        .timeline({ ease: "Power1.easeInOut" })
+
+        .to(".men .img-overlay", {
+          duration: 1,
+          y: "100%",
+        })
+        .to(
+          ".women .img-overlay",
+          {
+            duration: 1,
+            y: "100%",
+          },
+          "-=.7",
+        )
+        .from(".img img", {
+          opacity: 0,
+          duration: 1,
+          scale: 1.2,
+          stagger: 0.2,
+        })
+        .from(".text h1", {
+          opacity: 0,
+          duration: 1,
+          y: 50,
+        })
+        .from(
+          ".text h5",
+          {
+            opacity: 0,
+            duration: 1,
+            y: 50,
+          },
+          "-=.5",
+        )
+        .to(".content", {
+          y: "80px",
+        });
+
+        const tl_header = gsap
+        .timeline({ ease: "Power1.easeInOut" })
+        .from('header',{
+          delay:4.5,
+          duration:1,
+          y:-80
+        })
+
+        .from('header logo',{ 
+          duration:1,
+          y:-80
+        })
+         .from('header .menu li',{ 
+          duration:1,
+          y:-80,
+          stagger:.1
+        })
+    </script>
+  </body>
+</html>
