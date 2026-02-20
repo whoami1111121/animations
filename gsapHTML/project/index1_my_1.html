@@ -6,7 +6,35 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <style></style>
+  <style>
+    .mainBox {
+      background-color: pink;
+      overflow: hidden;
+    }
+    .btn {
+      cursor: pointer;
+      border: 4px solid rgb(5, 0, 26);
+      font-size: 24px;
+      background-color: white;
+      border-radius: 20px;
+    }
+    .btn:hover {
+      border: 4px solid rgb(255, 255, 255);
+      background-color: rgb(5, 0, 26);
+      color: white;
+      transition: 0.4s;
+    }
+    .t1 {
+      font-size: 46px;
+      font-weight: bold;
+      color: white;
+    }
+    .t2 {
+      font-size: 32px;
+      font-weight: 600;
+      color: white;
+    }
+  </style>
   <body class="h-screen w-full bg-black text-white" style="overflow-x: hidden">
     <div class="px-24 py-4 flex justify-between item-center">
       <h1 class="text-2xl font-bold">nav bar</h1>
@@ -19,41 +47,38 @@
     </div>
     <div class="w-full h-screen">
       <div class="flex">
-        <div class="flex-1 relative">
+        <div class="flex-1 relative mainBox">
           <img
-            src="https://images.unsplash.com/photo-1629088393821-eae6c1b43a2e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybCUyMG5lcGFsaXxlbnwwfHwwfHx8MA%3D%3D"
+            src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNhdHxlbnwwfHwwfHx8MA%3D%3D"
             alt="g2"
             class="w-full h-full"
           />
           <div class="absolute w-full h-full top-0 left-0 z-1">
             <div class="flex flex-col justify-center item-center w-full h-full">
               <div class="text-center" style="color: rgb(5, 0, 26)">
-                <button
-                  class="px-8 py-3  font-bold"
-                  style="cursor: pointer; border  : 4px solid rgb(5, 0, 26) ; font-size: 24px;"
-                >
+                <button class="px-8 py-3 font-bold btn" style="">
                   Watch More >>
                 </button>
-                <h1>Simple</h1>
-                <h2>FASHION</h2>
+                <h1 class="t1">Simple</h1>
+                <h2 class="t2">FASHION</h2>
               </div>
             </div>
           </div>
         </div>
-        <div class="flex-1 relative">
+        <div class="flex-1 relative mainBox">
           <img
-            src="https://images.unsplash.com/photo-1683857670227-86995dafcfe2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2lybCUyMG5lcGFsaXxlbnwwfHwwfHx8MA%3D%3D"
+            src="https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZG9nfGVufDB8fDB8fHww"
             alt="g1"
             class="w-full h-full"
           />
           <div class="absolute w-full h-full top-0 left-0 z-1">
             <div class="flex flex-col justify-center item-center w-full h-full">
-              <div class="text-center">
-                <button class="px-8 py-3 border-2 border-white text-xl">
-                  cen asfasdf asfsdfsafd
+              <div class="text-center" style="color: rgb(5, 0, 26)">
+                <button class="px-8 py-3 font-bold btn" style="">
+                  Watch More >>
                 </button>
-                <h1>Simple</h1>
-                <h2>FASHION</h2>
+                <h1 class="t1">Simple</h1>
+                <h2 class="t2">FASHION</h2>
               </div>
             </div>
           </div>
@@ -73,6 +98,34 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script></script>
+    <script>
+      let tl = gsap.timeline();
+      tl.from(".mainBox", {
+        stagger: 1,
+        y: -1000,
+        opacity: 0,
+        duration: 2,
+      });
+      tl.from(
+        ".mainBox img",
+        {
+          scale: 1.3,
+          opacity: 0,
+          duration: 2,
+          stagger: 2,
+        },
+        "-=1.7",
+      );
+      tl.from(
+        ".mainBox .absolute",
+        {
+          y: 200,
+          opacity: 0,
+          duration: 2,
+          stagger: 1,
+        },
+        "-=0.7",
+      );
+    </script>
   </body>
 </html>
