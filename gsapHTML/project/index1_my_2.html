@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <style>
+    section {
+      height: 100vh;
+      width: 100%;
+      background-color: rgb(26, 26, 26);
+      border-bottom: 1px solid black;
+    }
+    .wrap {
+      padding: 20px;
+    }
+    .bar {
+    }
+    .thumb {
+      height: 10px;
+      background-color: red;
+      width: 400px;
+    }
+    span {
+      background-color: blue;
+      height: 100%;
+      width: 30%;
+      display: block;
+    }
+    .bar:nth-child(1) span {
+      width: 60%;
+    }
+    .bar:nth-child(2) span {
+      width: 99%;
+    }
+    .bar:nth-child(3) span {
+      width: 70%;
+    }
+    .bar:nth-child(4) span {
+      width: 50%;
+    }
+    .bar:nth-child(1) abbr {
+      left: 60%;
+    }
+    .bar:nth-child(2) abbr {
+      left: 99%;
+    }
+    .bar:nth-child(3) abbr {
+      left: 70%;
+    }
+    .bar:nth-child(4) abbr {
+      left: 50%;
+    }
+    .bar {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .bar h3 abbr {
+      padding: 3px 20px;
+      border-radius: 10px;
+      background-color: blue;
+      margin-top: 25px;
+      position: absolute;
+      left: 0;
+      margin-left: -68px;
+    }
+  </style>
+  <body class="h-screen w-full bg-black text-white" style="overflow-x: hidden">
+    <section></section>
+    <section></section>
+    <section class="flex justify-center items-center">
+      <div class="wrap">
+        <div class="bar">
+          <h3>HTML/HTML5 <abbr>60%</abbr></h3>
+          <div class="thumb"><span></span></div>
+        </div>
+        <div class="bar">
+          <h3>CSS <abbr>99%</abbr></h3>
+          <div class="thumb"><span></span></div>
+        </div>
+        <div class="bar">
+          <h3>JS <abbr>70%</abbr></h3>
+          <div class="thumb"><span></span></div>
+        </div>
+        <div class="bar">
+          <h3>REACT <abbr>50%</abbr></h3>
+          <div class="thumb"><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+      integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      gsap.from(".thumb span", {
+        duration: 2,
+        width: "0%",
+        scrollTrigger: {
+          trigger: ".thumb  ",
+          scroller: "body",
+          markers: true,
+          start: "top 60%",
+          // scrub: true,
+        },
+      });
+
+      gsap.from(".bar h3 abbr", {
+        duration: 2,
+        left: "0%",
+        scrollTrigger: {
+          trigger: ".thumb  ",
+          scroller: "body",
+          markers: true,
+          start: "top 60%",
+          // scrub: true,
+        },
+      });
+    </script>
+  </body>
+</html>
