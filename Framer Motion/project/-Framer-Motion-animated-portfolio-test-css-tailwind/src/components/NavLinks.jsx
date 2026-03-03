@@ -5,12 +5,12 @@ const NavLinks = () => {
 
   return (
     <>
-    <div className='absolute w-full h-full flex flex-col justify-center gap-20'>
-      {items.map((item, i) => (
-        <a href={`#${item}`} key={i} className="text-4xl">
-          {item}
-        </a>
-      ))}
+      <div className='  w-full h-full flex flex-col justify-center   bg-blue-900  items-center gap-20'>
+        {items.map((item, i) => (
+          <a href={`#${item}`} key={i} className="text-4xl">
+            {item}
+          </a>
+        ))}
       </div>
     </>
   );

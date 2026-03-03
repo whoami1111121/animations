@@ -5,9 +5,9 @@ const ToggleButton = ({ setOpen }) => {
     <>
       <button
         onClick={() => setOpen((p) => !p)}
-        className="  top-10 left-10 w-10 h-10 fixed background-transparent border-none cursor-pointer"
+        className="  top-6 left-6 w-13 h-13 fixed background-transparent border-none cursor-pointer"
       >
-        Click
+        X
       </button>
     </>
   );
