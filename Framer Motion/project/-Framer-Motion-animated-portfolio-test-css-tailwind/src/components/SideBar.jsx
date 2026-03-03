@@ -26,16 +26,15 @@ const SideBar = () => {
         },
       },
     },
-  };
-  console.log(open);
+  }; 
 
   return (
     <motion.div
-      className="h-screen flex flex-col items-center justify-center color-black  overflow-hidden"
+      className="h-screen  flex flex-col items-center justify-center color-black   "
       animate={open ? "open" : "closed"}
     >
       <motion.div
-        className="flex flex-col gap-8  w-100  justify-center h-full  bg-amber-400  overflow-hidden absolute top-0 left-0  w-full"
+        className="fixed   w-100      bg-red-900  bottom-0    top-0 left-0   "
         variants={variants}
       >
         <NavLinks />
