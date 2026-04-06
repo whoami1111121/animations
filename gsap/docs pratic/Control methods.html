@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+
+      button {
+        text-transform: none;
+        margin: 0.25rem;
+      }
+
+      .nav.light {
+        padding-top: 2rem;
+        background-color: transparent;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <div class="bg">
+      <div class="box w-10 h-10 bg-red-800"></div>
+    </div>
+
+    <div class="nav light">
+      <button id="play">play()</button>
+      <button id="pause">pause()</button>
+      <button id="resume">resume()</button>
+      <button id="reverse">reverse()</button>
+      <button id="restart">restart()</button>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      let nav = document.querySelector(".bg");
+
+      let tween = gsap.to(".box", {
+        duration: 2,
+        x: () => nav.offsetWidth, // animate by the px width of the nav
+        // x: 100, // animate by the px width of the nav
+        // xPercent: -100, // offset by the width of the box
+        rotation: 360,
+        // ease: "none",
+        paused: true,
+      });
+
+      // click handlers for controlling the tween instance...
+      document.querySelector("#play").onclick = () => tween.play();
+      document.querySelector("#pause").onclick = () => tween.pause();
+      document.querySelector("#resume").onclick = () => tween.resume();
+      document.querySelector("#reverse").onclick = () => tween.reverse();
+      document.querySelector("#restart").onclick = () => tween.restart();
+    </script>
+  </body>
+</html>
