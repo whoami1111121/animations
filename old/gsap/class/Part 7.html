@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSAP</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <style>
+    .box h2 {
+      font-size: 20px;
+      font-weight: 700;
+    }
+  </style>
+  <body class="h-screen w-full bg-black text-white" style="overflow-x: hidden">
+    <div
+      class="w-150 mx-auto mt-10 border border-red-900 p-4 rounded-2xl text-center"
+    >
+      <h1 class="text-2xl">hello ok</h1>
+      <div class="box" id="box"></div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+        sapiente provident nihil voluptas accusamus reprehenderit
+      </p>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+      integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      const texts = [
+        "Frontend Developer",
+        "UI UX",
+        "Animator",
+        "Full Stack Devekoper",
+      ];
+
+      const box = document.getElementById("box");
+
+      let i = 0;
+
+      function animateText() {
+        const word = texts[i];
+        box.textContent = word;
+
+        gsap.fromTo(
+          box,
+          {
+            y: 20,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "elastic.out{1,0.5}",
+          },
+        );
+        gsap.to(box, {
+          y: -20,
+          opacity: 0,
+          delay: 2,
+          duration: 0.8,
+          ease: "power2.in",
+          onComplete: () => {
+            i = (i + 1) % texts.length;
+            animateText();
+          },
+        });
+      }
+
+      animateText();
+    </script>
+  </body>
+</html>
