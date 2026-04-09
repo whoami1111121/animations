@@ -18,7 +18,7 @@
           <div class="scroll-section vertical-section section">
             <div class="wrapper">
               <div class="list">
-                <div class="item bg-pink-100">
+                <div class="item bg-blue-900 text-white">
                   <div class="flex">
                     <div class="item_content flex-1">
                       <div class="p-20">
@@ -38,7 +38,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="item2 bg-pink-100">
+                <div class="item2 bg-blue-900 text-white">
                   <div class="flex">
                     <div class="item_content flex-1">
                       <div class="p-20">
@@ -75,30 +75,31 @@
       gsap.registerPlugin(ScrollTrigger);
       // gsap.set(".item", { yPercent: 100 });
       // const timeline = gsap.timeline();
+      gsap.set(".item", { yPercent: 100 });
       const timeline = gsap.timeline();
       timeline.to(".item", {
+        // xPercent: 0,
         scale: 0.9,
         borderRadius: "10px",
-        duration: 3,
-        // xPercent: 0,
-
         scrollTrigger: {
           trigger: ".item",
           pin: true,
           start: "top top",
-          end: () => `+=${1 * 300}px`,
+          end: () => `+=${1 * 500}px`,
           scrub: 1,
           invalidateOnRefresh: true,
           markers: true,
         },
         defaults: { ease: "none" },
       });
+      timeline.to(".item", {
+        xPercent: 0,
+      });
       timeline.to(
         ".item2",
         {
           scale: 0.9,
           borderRadius: "10px",
-          duration: 3,
           // xPercent: 0,
 
           scrollTrigger: {
