@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-black text-white">
+    <div>
+      <div class="w-full h-100 flex items-center justify-center bg-gray-900">
+        <h1 class="text-4xl font-semibold">
+          But Vertical Scroll Is Also Cool!
+        </h1>
+      </div>
+      <div>
+        <div>
+          <div class="scroll-section vertical-section section">
+            <div class="wrapper">
+              <div class="list">
+                <div class="item bg-pink-100">
+                  <div class="flex">
+                    <div class="item_content flex-1">
+                      <div class="p-20">
+                        <h1>1</h1>
+                        <h1>the quick brown fox jumps over the lazy dog.</h1>
+                      </div>
+                    </div>
+                    <div class="overflow-hidden flex-1">
+                      <video
+                        src="https://videos.pexels.com/video-files/4763824/4763824-uhd_2560_1440_24fps.mp4"
+                        loading="lazy"
+                        autoplay
+                        muted
+                        loop
+                        class="item_media"
+                      ></video>
+                    </div>
+                  </div>
+                </div>
+                <div class="item2 bg-pink-100">
+                  <div class="flex">
+                    <div class="item_content flex-1">
+                      <div class="p-20">
+                        <h1>1</h1>
+                        <h1>the quick brown fox jumps over the lazy dog.</h1>
+                      </div>
+                    </div>
+                    <div class="overflow-hidden flex-1">
+                      <video
+                        src="https://videos.pexels.com/video-files/3214448/3214448-uhd_2560_1440_25fps.mp4"
+                        loading="lazy"
+                        autoplay
+                        muted
+                        loop
+                        class="item_media"
+                      ></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="h-screen w-full bg-blue-900"></div>
+      <div class="h-screen w-full bg-red-900"></div>
+      <div class="h-screen w-full bg-black"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+      // gsap.set(".item", { yPercent: 100 });
+      // const timeline = gsap.timeline();
+      const timeline = gsap.timeline();
+      timeline.to(".item", {
+        scale: 0.9,
+        borderRadius: "10px",
+        duration: 3,
+        // xPercent: 0,
+
+        scrollTrigger: {
+          trigger: ".item",
+          pin: true,
+          start: "top top",
+          end: () => `+=${1 * 300}px`,
+          scrub: 1,
+          invalidateOnRefresh: true,
+          markers: true,
+        },
+        defaults: { ease: "none" },
+      });
+      timeline.to(
+        ".item2",
+        {
+          scale: 0.9,
+          borderRadius: "10px",
+          duration: 3,
+          // xPercent: 0,
+
+          scrollTrigger: {
+            trigger: ".item2",
+            pin: true,
+            start: "top top",
+            end: () => `+=${1 * 300}px`,
+            scrub: 1,
+            invalidateOnRefresh: true,
+            markers: true,
+          },
+          defaults: { ease: "none" },
+        },
+        "<",
+      );
+    </script>
+  </body>
+</html>
