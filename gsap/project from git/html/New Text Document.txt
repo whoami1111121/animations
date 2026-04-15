@@ -1,1 +1,26 @@
+<<<<<<< HEAD
 https://github.com/YT-PixelPerfectLabs/card-stacking-gsap?tab=readme-ov-file
+=======
+
+1 - https://github.com/YT-PixelPerfectLabs/card-stacking-gsap?tab=readme-ov-file
+
+2 - https://github.com/Harshitnegi5/Scrolling-Animation
+
+3 - https://github.com/DibyashaktiMoharana/ParallaxWebsite
+
+4 - https://github.com/Taliqa123/Gsap-Landing-Page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 709c471 (clean start)

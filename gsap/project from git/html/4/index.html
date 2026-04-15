@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        text-transform: uppercase;
+        overflow-x: hidden;
+      }
+      nav {
+        padding: 30px 100px;
+      }
+      h1 {
+        font-size: 84px;
+        line-height: 80px;
+        z-index: 10;
+      }
+      .hero {
+        position: relative;
+        height: calc(100vh - 90px);
+      }
+      img {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 40vh;
+      }
+      img:nth-child(1) {
+        top: 50%;
+        left: 60%;
+        transform: translate(-40%, -60%);
+        rotate: 10deg;
+      }
+      img:nth-child(2) {
+        top: 45%;
+        left: 60%;
+        transform: translate(-45%, -50%);
+        rotate: 5deg;
+      }
+      img:nth-child(3) {
+        top: 45%;
+        left: 60%;
+        transform: translate(-45%, -50%);
+        rotate: 0deg;
+      }
+      h1:nth-child(1) {
+        margin-left: -130px;
+      }
+      h1:nth-child(3) {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <nav class="flex justify-between">
+      <h3>Who Am I</h3>
+      <div class="flex gap-10">
+        <h2>instagram</h2>
+        <h2>gallery</h2>
+        <h2>contact</h2>
+      </div>
+    </nav>
+    <div class="flex items-center justify-center hero">
+      <div class="z-1">
+        <img
+          id="img1"
+          src="https://images.unsplash.com/photo-1485463598028-44d6c47bf23f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D"
+          alt="model"
+        />
+        <img
+          id="img2"
+          src="https://images.unsplash.com/photo-1527723503749-9e61addd1b3e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="model"
+        />
+        <img
+          id="img3"
+          src="https://images.unsplash.com/photo-1583766395091-2eb9994ed094?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="model"
+        />
+      </div>
+      <div class="z-2">
+        <h1>Hello I'm</h1>
+        <h1>Francesco</h1>
+        <h1>gioia</h1>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script>
+      const tl = gsap.timeline();
+      const img = document.getElementsByTagName("img");
+
+      tl.from("h3", {
+        scale: 2.4,
+        opacity: 0,
+        y: -100,
+        duration: 2,
+      });
+      tl.from(
+        "h2",
+        {
+          scale: 1.4,
+          opacity: 0,
+          y: -100,
+          duration: 1,
+          borderRadius: "10px",
+          stagger: 0.4,
+        },
+        ".9",
+      );
+      tl.from(
+        "h1",
+        {
+          scale: 1.4,
+          opacity: 0,
+          x: -600,
+          duration: 1,
+          stagger: 0.4,
+        },
+        "1.6",
+      );
+
+      tl.from("img", {
+        scale: 1.4,
+        opacity: 0,
+        x: 300,
+        duration: 1,
+        borderRadius: "10px",
+        stagger: 0.4,
+        rotate: 80,
+      },'1.4');
+    </script>
+  </body>
+</html>
