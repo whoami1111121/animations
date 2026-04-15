@@ -1,18 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+      .b {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <div class="flex gap-8 flex-col">
+      <div class="b b1"></div>
+      <div class="b b2"></div>
+      <div class="b b3"></div>
+    </div>
 
-
-
-
-     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-</body>
+    <script>
+      const tl = gsap.timeline();
+      tl.to(".b1", {
+        x: 500,
+        duration: 4,
+      });
+      tl.to(
+        ".b2",
+        {
+          x: 500,
+          duration: 4,
+        },
+        '>',
+      );
+      tl.to(".b3", {
+        x: 500,
+        duration: 2,
+      });
+    </script>
+  </body>
 </html>
