@@ -4,7 +4,7 @@
 
 3 - https://github.com/wrongakram/react-gsap-page-transitions
 
-4 - https://codesandbox.io/p/sandbox/github/fajarghifar/happybirthday
+4 - https://github.com/fajarghifar/happybirthday
 
 5 - https://github.com/IvanSmiths/tutorial-next-gsap-parallax
 
