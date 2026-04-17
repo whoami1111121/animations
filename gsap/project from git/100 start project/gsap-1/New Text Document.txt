@@ -1,0 +1,12 @@
+1 - https://github.com/WebDevSimplified/GSAP-Animation
+
+2 - https://github.com/codegridweb/Page-Transition-Using-BarbaJS-And-GSAP
+
+3 - https://github.com/wrongakram/react-gsap-page-transitions
+
+4 - https://codesandbox.io/p/sandbox/github/fajarghifar/happybirthday
+
+5 - https://github.com/IvanSmiths/tutorial-next-gsap-parallax
+
+6 - https://github.com/codrops/OnScrollColumnsRows
+
