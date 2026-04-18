@@ -1,22 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>yp1</title>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      @font-face {
+  font-family: m;
+  src: url(./font/MargarethRosinante-Regular.otf);
+}
+      body {
+        background-color: black;
+        color: white;
+        overflow-x: hidden;
+  font-family: m;
+      }
+      section{
+        height: 100vh;
+        width: 100vw;
+        flex-shrink: 0;
+      }
+      .section-1{
+        display: flex;
+      }
+      .section-2{
+        transform: translate(5%);
+      }
+      .main-wrapper{
+        display: flex;
+      }
+      .section-3{
+        background-color: white;
+        margin-top: -100vh;
+        position: relative;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body class="">
+    <div class="main-wrapper">
+        <scetion class="section-1">
+            <div class="box1">
+                <div class="name">Who am I</div>
+            </div>
+            <div class="box2">
+                <div class="image-gallery">
+                    <div class="col col-1">
+                        <img src="./img/col-1_1.jpg" alt="">
+                        <img src="./img/col-1_2.jpg" alt="">
+                        <img src="./img/col-1_3.jpg" alt="">
+                        <img src="./img/col-1_4.jpg" alt="">
+                        <img src="./img/col-1_5.jpg" alt="">
+                    </div>
+                    <div class="col col-2">
+                        <img src="./img/col-2_1.jpg" alt="">
+                        <img src="./img/col-2_2.jpg" alt="">
+                        <img src="./img/col-2_3.jpg" alt="">
+                        <img src="./img/col-2_4.jpg" alt="">
+                        <img src="./img/col-2_5.jpg" alt="">
+                    </div>
+                    <div class="col col-3">
+                        <img src="./img/col-3_1.jpg" alt="">
+                        <img src="./img/col-3_2.jpg" alt="">
+                        <img src="./img/col-3_3.jpg" alt="">
+                        <img src="./img/col-3_4.jpg" alt="">
+                        <img src="./img/col-3_5.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </scetion>
+        <section class="section-2">
+            <div class="side-bar">
+                <i class="fa-solid fa-expand"></i>
+                <div class="brand-name">Who am I</div>
+                <div class="des">HIGH QUALITY FABRICS. <br>designed & mad <br> in iceland.<br></div>
+            </div>
+            <div class="wrapper">
+                <div class="left">
+                    <div class="line-1">
+                        <p>VORLIF</p>
+                        <div class="copy-right">
+                            WHO AM I 2026&#174 <br> DESIGNED TO ENDURE
+                        </div>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="./img/img-1.jpg" alt="">
+                    </div>
 
-</head>
-<body>
-    
+                    <div class="line-2">
+                        <p class="num">/22</p>
+                        <p>SPRING</p>
+                        <button class="loop">
+                            <span>COLLECTION /SHOP&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        </button>
+                        <button class="loop loop2">COLLECTION /SHOP&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="animate-text">
+                        <span>COLLECTION /19* W</span>
+                    </div>
+                    <div class="img-container">
+                        <img src="./img/im2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
-
-
+    <section class="section-3">
+        <div class="rows">
+            <ul class="row row-1">
+                <li>Who am I</li>
+                <li>Who am I</li>
+                <li>Who am I</li>
+                <li>Who am I</li>
+            </ul>
+            <ul class="row row-2">
+                <li>Who am I</li>
+                <li>Who am I</li>
+                <li>Who am I</li>
+                <li>Who am I</li>
+            </ul>
+            <ul class="row row-3">
+                <li>Who am I</li>
+                <li>Who am I</li>
+                <li>Who am I</li>
+                <li>Who am I</li>
+            </ul>
+        </div>
+    </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.5/ScrollTrigger.min.js"></script>
-
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.5/ScrollTrigger.min.js"></script>
+  </body>
 </html>
