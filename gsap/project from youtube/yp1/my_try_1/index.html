@@ -11,10 +11,96 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      @font-face {
+        font-family: m;
+        src: url(./font/MargarethRosinante-Regular.otf);
+      }
+
+      body {
+        /* overflow-x: hidden; */
+        font-family: m;
+      }
+      .landing {
+        width: 103%;
+        height: 100vh;
+        display: flex;
+      }
+      .gallery {
+        width: 35%;
+      }
+
+      .image_gallery {
+        display: flex;
+        height: 100vh;
+      }
+
+      .col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      img {
+        min-height: 300px;
+        height: auto;
+        width: 200px;
+        object-fit: cover;
+        background-color: black;
+      }
+
+      .col-1 img,
+      .col-3 img {
+        padding: 0.2rem 0.5rem;
+      }
+
+      .col-2 img {
+        padding: 0.2rem 0;
+      }
+    </style>
   </head>
   <body class="">
-    <div>
-
+    <div class="main">
+      <section>
+        <div class="landing">
+          <div class="logo flex-1">
+            <h1 class="text-[124px]">Kove</h1>
+          </div>
+          <div class="gallery">
+            <div class="image_gallery">
+              <div class="col col-1">
+                <img src="./img/col-1_1.jpg" alt="" />
+                <img src="./img/col-1_2.jpg" alt="" />
+                <img src="./img/col-1_3.jpg" alt="" />
+                <img src="./img/col-1_4.jpg" alt="" />
+                <img src="./img/col-1_5.jpg" alt="" />
+              </div>
+              <div class="col col-2">
+                <img src="./img/col-2_1.jpg" alt="" />
+                <img src="./img/col-2_2.jpg" alt="" />
+                <img src="./img/col-2_3.jpg" alt="" />
+                <img src="./img/col-2_4.jpg" alt="" />
+                <img src="./img/col-2_5.jpg" alt="" />
+              </div>
+              <div class="col col-3">
+                <img src="./img/col-3_1.jpg" alt="" />
+                <img src="./img/col-3_2.webp" alt="" />
+                <img src="./img/col-3_3.jpg" alt="" />
+                <img src="./img/col-3_4.jpg" alt="" />
+                <img src="./img/col-3_5.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
