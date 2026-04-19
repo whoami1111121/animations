@@ -29,6 +29,7 @@ export default function Home() {
           <div>Seoul, South Korea</div>
           <div>San Miguel de Allende, Mexico</div>
           <div>Queenstown, New Zealand</div>
+          <div>Queenstown, New Zealand</div>
         </div>
       </main>
     </div>
