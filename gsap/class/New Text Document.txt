@@ -4,7 +4,8 @@ https://www.youtube.com/@theMisfitWhale/playlists
 Youtube Class
 1 - https://www.youtube.com/watch?v=MG5mPfi3qkM&list=PLkY85cDHOEpt96vm9LEfs1kLlT8ECwPTs&index=3
 
-2 - 
+2 - https://www.youtube.com/watch?v=weVNWk0LvNg&list=PLkY85cDHOEpt96vm9LEfs1kLlT8ECwPTs&index=6
+https://github.com/taimoorshahzada/3D-Scroll-Effect-using-GSAP-Scroll-Trigger-Plugin
 
 3 - 
 
