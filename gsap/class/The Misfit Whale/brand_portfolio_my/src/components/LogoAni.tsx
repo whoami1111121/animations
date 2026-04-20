@@ -24,9 +24,7 @@ const LogoAni = ({ text }: { text: string }) => {
             {text}
 
         </div > */}
-            <div className='pointer-events-auto cursor-pointer leading-none transition-height [&>svg]:h-10 [&>svg]:duration-700 [&>svg]:ease-out 
-        // [&>svg]:hover:h-10
-        '
+            <div className="header_logo  pointer-event-auto cursor-pointer leading-none transition-height [&>svg]:h-10 [&>svg]:duration-500 [&>svg]:ease-out lg:[&>svg]:h-16 "
                 data-color='#ff0000' ref={logoRef}
                 onMouseEnter={() => changTextColor()} onMouseLeave={() => resetTextColor()}
             >
