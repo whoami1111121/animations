@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      * {
+        margin: 0;
+        /* padding: 0; */
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+      img {
+        position: absolute;
+        scale: 0.5;
+      }
+      h1 {
+        font-size: 80px;
+        line-height: 80px;
+        text-align: justify;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+        color: white;
+      }
+      #scaleableImg1 {
+        bottom: -80px;
+        left: -0px;
+      }
+      #scaleableImg2 {
+        top: -130px;
+        left: -110px;
+      }
+      #scaleableImg3 {
+        top: -30px;
+        left: 180px;
+      }
+      #scaleableImg4 {
+        top: -90px;
+        right: -110px;
+      }
+      #scaleableImg5 {
+        bottom: 120px;
+        right: 20px;
+      }
+      .cardImage {
+        /* opacity: 0; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="relative w-full h-screen">
+      <span class="absolute top-20 left-20">(OUR AWARDS)</span>
+      <div
+        class="w-full h-screen relative flex justify-center items-center bg-blue-900 p-16 imageBoard"
+      >
+        <h1>
+          NOT FOR OUR EGOS, BUT BECAUSE AWARDS ARE A MEASURE OF CREATIVITY,
+          ORIGINALITY AND QUALITY. AIMING FOR AWARDS PUSHES US TO THINK DEEPER,
+          GO FURTHER AND HAVE MEANINGFUL CONVERSATIONS ABOUT WHAT CREATIVITY IS.
+        </h1>
+
+        <img src="/img1.png" alt="" id="scaleableImg1" class="scaleableImg" />
+        <img src="/img2.png" alt="" id="scaleableImg2" class="scaleableImg" />
+        <img src="/img3.png" alt="" id="scaleableImg3" class="scaleableImg" />
+        <img src="/img4.png" alt="" id="scaleableImg4" class="scaleableImg" />
+        <img src="/img5.png" alt="" id="scaleableImg5" class="scaleableImg" />
+      </div>
+      <div
+        class="w-full h-screen cardImage absolute top-0 left-0 right-0 bottom-0 text-red-900 flex justify-center items-center"
+      >
+        <h2 class="text-black text-[120px]">WE PLAY TO WIN</h2>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".imageBoard",
+            pin: true,
+            start: "top top",
+            end: "+=300%",
+            scrub: 1,
+          },
+          defaults: {
+            ease: "none",
+          },
+        })
+        .to(
+          document.body,
+          {
+            delay: 0.3,
+            backgroundColor: "#f0f0f0",
+          },
+          "start",
+        )
+        .to(
+          "h1",
+          {
+            scale: 3,
+          },
+          "start",
+        )
+        .to(
+          "#scaleableImg1",
+          {
+            x: -1000,
+            y: -400,
+            scale: 8,
+            rotate: 50,
+          },
+          "start",
+        )
+        .to(
+          "#scaleableImg2",
+          {
+            x: -1000,
+            y: -1400,
+            scale: 3,
+            rotate: -140,
+          },
+          "start",
+        )
+        .to(
+          "#scaleableImg3",
+          {
+            x: 600,
+            y: -1400,
+            scale: 3,
+            rotate: -140,
+          },
+          "start",
+        )
+        .to(
+          "#scaleableImg4",
+          {
+            x: 1000,
+            y: -1400,
+            scale: 3,
+            rotate: -140,
+          },
+          "start",
+        )
+        .to(
+          ".imageBoard",
+          {
+            opacity: 0,
+          },
+          "start",
+        )
+        .to(
+          "#scaleableImg5",
+          {
+            x: -1400,
+            y: 1400,
+            scale: 4,
+            rotate: -140,
+          },
+          "start",
+        )
+        .to(
+          ".cardImage",
+          {
+            delay: 0.1,
+            // scale: 5,
+          },
+          "start",
+        )
+        .to(
+          ".cardImage",
+          {
+            // scale: 5,
+            delay: 0.4,
+            opacity: 1,
+          },
+          "start",
+        );
+    </script>
+  </body>
+</html>
