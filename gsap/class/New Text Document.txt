@@ -7,8 +7,8 @@ Youtube Class
 2 - https://www.youtube.com/watch?v=weVNWk0LvNg&list=PLkY85cDHOEpt96vm9LEfs1kLlT8ECwPTs&index=6
 https://github.com/taimoorshahzada/3D-Scroll-Effect-using-GSAP-Scroll-Trigger-Plugin
 
-3 - 
-
+3 - https://www.youtube.com/watch?v=poiwg0YAWPQ&list=PLkY85cDHOEpt96vm9LEfs1kLlT8ECwPTs&index=16
+https://github.com/theMisfitWhale/react_gsap_sandbox/tree/changing-backgroud-color-on-scroll
 4 - 
 
 5 - 
