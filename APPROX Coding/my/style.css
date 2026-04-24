@@ -1,0 +1,108 @@
+@font-face {
+  src: url("FONTS/attila.ttf");
+  font-family: "attila Sans Uniform";
+}
+@font-face {
+  src: url("FONTS/DancingScript-VariableFont_wght.ttf");
+  font-family: "dancing script";
+}
+@font-face {
+  src: url("FONTS/Havelock\ Titling\ Family/havelock.otf");
+  font-family: "havelock titling";
+}
+@font-face {
+  src: url("FONTS/Montserrat/Montserrat-Medium.ttf");
+  font-family: "montserrat";
+}
+::-webkit-scrollbar {
+  display: none;
+}
+:root {
+  --bg: #232025;
+  --ac: #cecece;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "attila Sans Uniform";
+}
+body {
+  overflow-x: hidden;
+}
+body {
+  color: var(--ac);
+  background-color: var(--bg);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 120px;
+  /* background-color: var(--bg); */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  /* color: var(--bg); */
+}
+nav * {
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s;
+}
+.cartmenu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  cursor: pointer;
+}
+.menu {
+  width: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.menu1 {
+  width: 80%;
+  height: 2px;
+  background-color: var(--ac);
+  border-radius: 4px;
+}
+.menu2 {
+  width: 100%;
+  height: 2px;
+  background-color: var(--ac);
+  border-radius: 4px;
+}
+.mobileview {
+  background-color: var(--ac);
+  color: var(--bg);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 10;
+  transform: translateY(-100%);
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1.8s;
+  overflow: hidden;
+}
+.mobileviewbox {
+  padding: 0 120px 120px;
+}
+.mobileview h1 {
+  font-size: 240px;
+  font-weight: bold;
+  margin-top: 60px;
+}
+.mobileview .list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 40vh;
+  gap: 40px;
+}
+.mobileview .list h4 {
+  font-size: 32px;
+  font-weight: 600;
+  cursor: pointer;
+}
