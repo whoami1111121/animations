@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Animation Fill Mode Demo</title>
+    <style>
+      body {
+        padding: 40px;
+        font-family: sans-serif;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        background: tomato;
+        margin-bottom: 20px;
+      }
+
+      @keyframes move {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(200px);
+        }
+      }
+
+      /* Try different modes here */
+      .forwards {
+        animation: move 2s forwards;
+        background: green;
+      }
+
+      .none {
+        animation: move 2s;
+        background: red;
+      }
+
+      .both {
+        animation: move 2s 1s both; /* delay 1s */
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>none (default)</h3>
+    <div class="box none"></div>
+
+    <h3>forwards</h3>
+    <div class="box forwards"></div>
+
+    <h3>both (with delay)</h3>
+    <div class="box both"></div>
+  </body>
+</html>

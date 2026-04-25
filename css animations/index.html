@@ -1,11 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css animation</title>
+    <style>
+      .t1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        animation-name: myAnimation;
+        animation-duration: 4s;
+        margin-bottom: 20px;
+      }
+      @keyframes myAnimation {
+        from {
+          background-color: red;
+          scale: 1;
+        }
+        to {
+          background-color: yellow;
+          scale: 1.2;
+        }
+      }
+      .t2 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        animation-name: myAnimation2;
+        animation-duration: 4s;
+        margin-bottom: 20px;
+        animation-iteration-count: infinite;
+      }
+      @keyframes myAnimation2 {
+        0% {
+          background-color: red;
+        }
+        25% {
+          background-color: yellow;
+        }
+        50% {
+          background-color: blue;
+        }
+        100% {
+          background-color: green;
+        }
+      }
+
+      .t3 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        animation: myAnimation3 1s;
+      }
+      @keyframes myAnimation3 {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(100px);
+        }
+      }
+      .t4 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        animation: myAnimation4 1s;
+        animation-fill-mode: both;
+      }
+      @keyframes myAnimation4 {
+        from {
+          background-color: red;
+          scale: 1;
+        }
+        to {
+          background-color: yellow;
+          scale: 1.2;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>keyframes from to</h1>
+      <div class="t1"></div>
+      <div class="t2"></div>
+      <p>
+        animation-delay: 2s;
+        <br />
+        animation-delay: -2s; - in the following example, the animation will
+        start as if it had already been playing for 2 seconds:
+        <br />
+        animation-iteration-count: 3; - animation-iteration-count: infinite;
+        <br />
+        #div1 {animation-timing-function: linear;} #div2
+        {animation-timing-function: ease;} #div3 {animation-timing-function:
+        ease-in;} #div4 {animation-timing-function: ease-out;} #div5
+        {animation-timing-function: ease-in-out;}
+        <br />
+        cubic-bezier(n,n,n,n) - Lets you define your own values in a
+        cubic-bezier function
+      </p>
+
+      <p>
+        The animation-direction property specifies whether an animation should
+        be played forwards, backwards or in alternate cycles. The
+        animation-direction property can have the following values: normal - The
+        animation is played as normal (forwards). This is default reverse - The
+        animation is played in reverse direction (backwards) alternate - The
+        animation is played forwards first, then backwards alternate-reverse -
+        The animation is played backwards first, then forwards
+      </p>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <div class="t3"></div>
+    <br> <br>
+    <div class="t4"></div>
+  </body>
 </html>
