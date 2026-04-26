@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p1 start</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: black;
+      color: white;
+      overflow: hidden;
+    }
+    main {
+      height: 100vh;
+      width: 100vw;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 140px;
+      align-items: center;
+      height: 80px;
+      background-color: rgb(63, 63, 63);
+    }
+    nav h1 {
+      font-size: 32px;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+    nav ul li {
+      font-size: 16px;
+      font-weight: 500;
+      transition: all 0.4s;
+      cursor: pointer;
+    }
+    nav ul li:hover {
+      text-decoration: underline;
+      font-weight: 600;
+      /* font-size: 18px; */
+      scale: 1.1;
+    }
+    section {
+      width: 100%;
+      height: calc(100vh - 80px);
+      background-color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    nav ul .active {
+      scale: 1.1;
+      font-weight: 700;
+    }
+    .box {
+      display: none;
+    }
+    .activeBox {
+      display: block;
+      font-size: 64px;
+      font-weight: 700;
+    }
+  </style>
+  <body>
+    <main>
+      <nav>
+        <h1>Who Am I</h1>
+        <ul id="navItem">
+          <li id="home" class="list active">Home</li>
+          <li id="about" class="list">About Me</li>
+          <li id="contact" class="list">Contact</li>
+          <li id="service" class="list">Service</li>
+        </ul>
+      </nav>
+      <section id="section">
+        <div class="box activeBox">Home</div>
+        <div class="box">about</div>
+        <div class="box">const</div>
+        <div class="box">ser</div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <script>
+      const tl = gsap.timeline();
+      tl.from("#section", {
+        xPercent: 100,
+        duration: 1,
+        ease: "power4.out",
+      });
+      tl.from(
+        ".activeBox",
+        {
+          y: 40,
+          opacity: 0,
+          rotationX: 90,
+          height: 0,
+        },
+        "-=.2",
+      );
+      const navItem = document.getElementById("navItem");
+      const list = navItem.getElementsByClassName("list");
+
+      for (let i = 0; i < list.length; i++) {
+        list[i].addEventListener("click", function () {
+          const current = document.getElementsByClassName("active");
+          const section = document.getElementById("section");
+          const box = section.getElementsByClassName("box");
+          const activeBox = document.getElementsByClassName("activeBox");
+
+          current[0].className = current[0].className.replace(" active", "");
+          activeBox[0].className = activeBox[0].className.replace(
+            " activeBox",
+            "",
+          );
+          this.className += " active";
+          box[i].className += " activeBox";
+
+          const tl = gsap.timeline();
+          tl.from("#section", {
+            xPercent: 100,
+            duration: 1,
+            ease: "power4.out",
+          });
+          tl.from(
+            ".activeBox",
+            {
+              y: 40,
+              opacity: 0,
+              rotationX: 90,
+              height: 0,
+            },
+            "-=.2",
+          );
+        });
+      }
+    </script>
+  </body>
+</html>
