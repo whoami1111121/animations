@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p2 start</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: black;
+      color: white;
+      overflow-x: hidden;
+    }
+    .parallax {
+      background: linear-gradient(#0f2b9c, #673d7d 20%, #a74a67, #edfc54);
+    }
+  </style>
+  <body>
+    <main>
+      <div className="parallax-outer">
+        <div className="parallax">
+          <img
+            ref="{mountain3}"
+            className="mountain-3"
+            src="/parallax/mountain-3.svg"
+          />
+          <img
+            ref="{mountain2}"
+            className="mountain-2"
+            src="/parallax/mountain-2.svg"
+          />
+          <img
+            ref="{mountain1}"
+            className="mountain-1"
+            src="/parallax/mountain-1.svg"
+          />
+          <img ref="{sun}" className="sun" src="/parallax/sun.svg" />
+          <img
+            ref="{cloudsBottom}"
+            className="clouds-bottom"
+            src="/parallax/cloud-bottom.svg"
+          />
+          <img
+            ref="{cloudsLeft}"
+            className="clouds-left"
+            src="/parallax/clouds-left.svg"
+          />
+          <img
+            ref="{cloudsRight}"
+            className="clouds-right"
+            src="/parallax/clouds-right.svg"
+          />
+          <img ref="{stars}" className="stars" src="/parallax/stars.svg" />
+          <div ref="{copy}" className="copy">
+            <h1>Journey</h1>
+            <span ref="{btn}">Discover more</span>
+          </div>
+        </div>
+      </div>
+      <div className="about">
+        <h2>Lorem ipsum</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit laborum
+          ipsam corrupti asperiores magnam quos cumque animi tempore vero
+          repellendus, harum odio neque quis, non temporibus. Inventore
+          asperiores repudiandae praesentium ut, fugit quo esse, placeat ullam
+          quibusdam perspiciatis delectus ducimus nihil. Dolorum nam veniam
+          aperiam sapiente corporis! Quisquam, veritatis repellendus?
+        </p>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <script></script>
+  </body>
+</html>
